@@ -6,11 +6,10 @@
     using System.Threading;
     using System.Threading.Tasks;
 
-    using RecepiesProject.Data.Common.Models;
-    using RecepiesProject.Data.Models;
-
     using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore;
+    using RecepiesProject.Data.Common.Models;
+    using RecepiesProject.Data.Models;
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser, ApplicationRole, string>
     {
@@ -24,8 +23,19 @@
         {
         }
 
-        public DbSet<Setting> Settings { get; set; }
+        public DbSet<Recipe> Recipes { get; set; }
 
+        public DbSet<Category> Categories { get; set; }
+
+        public DbSet<Image> Images { get; set; }
+
+        public DbSet<Ingredient> Ingredients { get; set; }
+
+        public DbSet<RecipeIngredient> RecipeIngredients { get; set; }
+
+        public DbSet<Vote> Votes { get; set; }
+
+     
         public override int SaveChanges() => this.SaveChanges(true);
 
         public override int SaveChanges(bool acceptAllChangesOnSuccess)

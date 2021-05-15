@@ -8,8 +8,7 @@
     using RecepiesProject.Data.Models;
     using RecepiesProject.Data.Repositories;
     using RecepiesProject.Data.Seeding;
-    using RecepiesProject.Services.Data;
-    using RecepiesProject.Services.Mapping;
+      using RecepiesProject.Services.Mapping;
     using RecepiesProject.Services.Messaging;
     using RecepiesProject.Web.ViewModels;
 
@@ -64,7 +63,7 @@
 
             // Application services
             services.AddTransient<IEmailSender, NullMessageSender>();
-            services.AddTransient<ISettingsService, SettingsService>();
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
