@@ -11,7 +11,6 @@
     using RecepiesProject.Data.Models;
     using RecepiesProject.Data.Repositories;
     using RecepiesProject.Data.Seeding;
-    using RecepiesProject.Services.Data;
     using RecepiesProject.Services.Messaging;
 
     using CommandLine;
@@ -52,8 +51,8 @@
         {
             var sw = Stopwatch.StartNew();
 
-            var settingsService = serviceProvider.GetService<ISettingsService>();
-            Console.WriteLine($"Count of settings: {settingsService.GetCount()}");
+            //var settingsService = serviceProvider.GetService<ISettingsService>();
+            //Console.WriteLine($"Count of settings: {settingsService.GetCount()}");
 
             Console.WriteLine(sw.Elapsed);
             return await Task.FromResult(0);
@@ -81,7 +80,7 @@
 
             // Application services
             services.AddTransient<IEmailSender, NullMessageSender>();
-            services.AddTransient<ISettingsService, SettingsService>();
+            //services.AddTransient<ISettingsService, SettingsService>();
         }
     }
 }
