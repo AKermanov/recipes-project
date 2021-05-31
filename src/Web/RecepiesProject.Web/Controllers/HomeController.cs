@@ -2,9 +2,8 @@
 {
     using System.Diagnostics;
 
-    using RecepiesProject.Web.ViewModels;
-
     using Microsoft.AspNetCore.Mvc;
+    using RecepiesProject.Web.ViewModels;
 
     public class HomeController : BaseController
     {
