@@ -4,11 +4,10 @@
     using System.Linq;
     using System.Threading.Tasks;
 
-    using RecepiesProject.Common;
-    using RecepiesProject.Data.Models;
-
     using Microsoft.AspNetCore.Identity;
     using Microsoft.Extensions.DependencyInjection;
+    using RecepiesProject.Common;
+    using RecepiesProject.Data.Models;
 
     internal class RolesSeeder : ISeeder
     {

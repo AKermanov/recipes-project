@@ -22,6 +22,6 @@
             return this.View(viewModel);
         }
 
-        // add create recepie using http post
+        // add create Recipe using http post
     }
 }

@@ -2,16 +2,6 @@
 {
     using System.Reflection;
 
-    using RecepiesProject.Data;
-    using RecepiesProject.Data.Common;
-    using RecepiesProject.Data.Common.Repositories;
-    using RecepiesProject.Data.Models;
-    using RecepiesProject.Data.Repositories;
-    using RecepiesProject.Data.Seeding;
-      using RecepiesProject.Services.Mapping;
-    using RecepiesProject.Services.Messaging;
-    using RecepiesProject.Web.ViewModels;
-
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.AspNetCore.Http;
@@ -20,6 +10,15 @@
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
     using Microsoft.Extensions.Hosting;
+    using RecepiesProject.Data;
+    using RecepiesProject.Data.Common;
+    using RecepiesProject.Data.Common.Repositories;
+    using RecepiesProject.Data.Models;
+    using RecepiesProject.Data.Repositories;
+    using RecepiesProject.Data.Seeding;
+    using RecepiesProject.Services.Mapping;
+    using RecepiesProject.Services.Messaging;
+    using RecepiesProject.Web.ViewModels;
 
     public class Startup
     {
