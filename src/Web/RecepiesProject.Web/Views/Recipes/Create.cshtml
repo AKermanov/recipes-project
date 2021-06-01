@@ -1,0 +1,9 @@
+﻿@model RecepiesProject.Web.ViewModels.Recipes.CreateRecipeInputModel
+@{
+    this.ViewData["Title"] = "Add new recipe";
+    var categoryItems = this.Model.CategoriesItems.Select(x => new SelectListItem(x.Value, x.Key));
+}
+
+<form method="post" class="col-md-6 offset-md-3" enctype="multipart/form-data">
+
+</form>
