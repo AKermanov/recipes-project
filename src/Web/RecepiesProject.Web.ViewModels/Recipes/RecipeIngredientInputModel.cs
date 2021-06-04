@@ -6,7 +6,7 @@
     {
         [Required]
         [MinLength(3)]
-        public string IngedientName { get; set; }
+        public string IngredientName { get; set; }
 
         [Required]
         [MinLength(1)]

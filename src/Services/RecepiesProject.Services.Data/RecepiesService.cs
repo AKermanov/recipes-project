@@ -39,10 +39,10 @@
 
             foreach (var inputIngredient in input.Ingredients)
             {
-                var ingredient = this.ingredientRepository.All().FirstOrDefault(x => x.Name == inputIngredient.IngedientName);
+                var ingredient = this.ingredientRepository.All().FirstOrDefault(x => x.Name == inputIngredient.IngredientName);
                 if (ingredient == null)
                 {
-                    ingredient = new Ingredient { Name = inputIngredient.IngedientName };
+                    ingredient = new Ingredient { Name = inputIngredient.IngredientName };
                 }
 
                 recipe.Ingredients.Add(new RecipeIngredient
@@ -52,7 +52,7 @@
                 });
 
                 // /wwwroot/images/recipes/jhdsi-343g3h453-=g34g.jpg
-                Directory.CreateDirectory($"{imagePath}/recipe/");
+                Directory.CreateDirectory($"{imagePath}/recipes/");
                 foreach (var image in input.Images)
                 {
                     var extension = Path.GetExtension(image.FileName).TrimStart('.');

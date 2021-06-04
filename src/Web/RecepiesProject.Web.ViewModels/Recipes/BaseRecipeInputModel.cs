@@ -3,7 +3,7 @@
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
-    public class BaseRecipeInputModel
+    public abstract class BaseRecipeInputModel
     {
         [Required]
         [MinLength(4)]
