@@ -1,6 +1,9 @@
 ﻿namespace RecepiesProject.Web.ViewModels.Recipes
 {
-    public class RecipesListViewModel
+    using System.Collections.Generic;
+
+    public class RecipesListViewModel : PagingViewModel
     {
+        public IEnumerable<RecipeInListViewModel> Recipes { get; set; }
     }
 }

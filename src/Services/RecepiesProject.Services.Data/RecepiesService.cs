@@ -8,11 +8,12 @@
 
     using RecepiesProject.Data.Common.Repositories;
     using RecepiesProject.Data.Models;
+    using RecepiesProject.Services.Mapping;
     using RecepiesProject.Web.ViewModels.Recipes;
 
     public class RecepiesService : IRecepiesService
     {
-        private readonly string[] allowedExtentions = { "jpg", "png", "gif" };
+        private readonly string[] allowedExtensions = { "jpg", "png", "gif" };
         private readonly IDeletableEntityRepository<Recipe> recipesRepository;
         private readonly IDeletableEntityRepository<Ingredient> ingredientRepository;
 
@@ -56,9 +57,9 @@
                 foreach (var image in input.Images)
                 {
                     var extension = Path.GetExtension(image.FileName).TrimStart('.');
-                    if (!this.allowedExtentions.Any(x => extension.EndsWith(x)))
+                    if (!this.allowedExtensions.Any(x => extension.EndsWith(x)))
                     {
-                        throw new Exception($"Invalid image extention {extension}!");
+                        throw new Exception($"Invalid image extension {extension}");
                     }
 
                     var dbImage = new Image
@@ -85,7 +86,12 @@
 
         public IEnumerable<T> GetAll<T>(int page, int itemsPerPage = 12)
         {
-            throw new System.NotImplementedException();
+            var recipes = this.recipesRepository.AllAsNoTracking()
+                .OrderByDescending(x => x.Id)
+                .Skip((page - 1) * itemsPerPage).Take(itemsPerPage)
+                .To<T>().ToList();
+
+            return recipes;
         }
 
         public T GetById<T>(int id)
@@ -98,10 +104,7 @@
             throw new System.NotImplementedException();
         }
 
-        public int GetCount()
-        {
-            throw new System.NotImplementedException();
-        }
+        public int GetCount() => this.recipesRepository.All().Count();
 
         public IEnumerable<T> GetRandom<T>(int count)
         {
